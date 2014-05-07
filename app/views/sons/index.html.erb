@@ -1,0 +1,29 @@
+<h1>Listing sons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Old</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sons.each do |son| %>
+      <tr>
+        <td><%= son.name %></td>
+        <td><%= son.old %></td>
+        <td><%= link_to 'Show', son %></td>
+        <td><%= link_to 'Edit', edit_son_path(son) %></td>
+        <td><%= link_to 'Destroy', son, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Son', new_son_path %>

@@ -1,0 +1,32 @@
+<h1>Forma de Pagamento</h1>
+
+<table borde=1>
+  <thead>
+    <tr>
+      <th>Descricao&nbsp;</th>
+      <th>Dias&nbsp;</th>
+      <th>Situacao</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @for_pags.each do |for_pag| %>
+      <tr>
+        <td><%= for_pag.description %>&nbsp;</td>
+        <td><%= for_pag.days %></td>
+        <td><%= for_pag.active %></td>
+        <td><%= link_to 'Show', for_pag %></td>
+        <td><%= link_to 'Edit', edit_for_pag_path(for_pag) %></td>
+        <td><%= link_to 'Destroy', for_pag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New For pag', new_for_pag_path %>

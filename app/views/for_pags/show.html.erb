@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @for_pag.description %>
+</p>
+
+<p>
+  <strong>Days:</strong>
+  <%= @for_pag.days %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @for_pag.active %>
+</p>
+
+<%= link_to 'Edit', edit_for_pag_path(@for_pag) %> |
+<%= link_to 'Back', for_pags_path %>

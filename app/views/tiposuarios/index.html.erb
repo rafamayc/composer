@@ -1,0 +1,29 @@
+<h1>Listing tiposuarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ativo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tiposuarios.each do |tiposuario| %>
+      <tr>
+        <td><%= tiposuario.name %></td>
+        <td><%= tiposuario.ativo %></td>
+        <td><%= link_to 'Show', tiposuario %></td>
+        <td><%= link_to 'Edit', edit_tiposuario_path(tiposuario) %></td>
+        <td><%= link_to 'Destroy', tiposuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tiposuario', new_tiposuario_path %>

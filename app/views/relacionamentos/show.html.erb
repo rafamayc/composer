@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @relacionamento.name %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @relacionamento.tipo %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @relacionamento.user %>
+</p>
+
+<%= link_to 'Edit', edit_relacionamento_path(@relacionamento) %> |
+<%= link_to 'Back', relacionamentos_path %>

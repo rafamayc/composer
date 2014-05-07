@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dataaprovacao:</strong>
+  <%= @pedido.dataaprovacao %>
+</p>
+
+<p>
+  <strong>Datapedido:</strong>
+  <%= @pedido.datapedido %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @pedido.cliente.name %>
+</p>
+
+<p>
+  <strong>Tipo pag:</strong>
+  <%= @pedido.tipo_pag.description %>
+</p>
+
+
+<p>
+  <strong>Valortotal:</strong>
+  <%= @pedido.valortotal %>
+</p>
+
+<p>
+  <strong>Statuspedido:</strong>
+  <%= @pedido.statuspedido %>
+</p>
+
+<%= link_to 'Edit', edit_pedido_path(@pedido) %> |
+<%= link_to 'Back', pedidos_path %>

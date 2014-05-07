@@ -1,0 +1,8 @@
+<%# add navigation links to this file %>
+<% if user_signed_in? %>
+  <li><%= link_to 'Sair', signout_path %></li>
+  <li><%= link_to 'Cadastros', for_pags_path %></li>
+  <li><teste></li>
+<% else %>
+  <li><%= link_to 'Entrar', signin_path %></li>
+<% end %>

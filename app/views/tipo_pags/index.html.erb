@@ -1,0 +1,29 @@
+<h1>Listing tipo_pags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Active</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipo_pags.each do |tipo_pag| %>
+      <tr>
+        <td><%= tipo_pag.description %></td>
+        <td><%= tipo_pag.active %></td>
+        <td><%= link_to 'Show', tipo_pag %></td>
+        <td><%= link_to 'Edit', edit_tipo_pag_path(tipo_pag) %></td>
+        <td><%= link_to 'Destroy', tipo_pag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tipo pag', new_tipo_pag_path %>

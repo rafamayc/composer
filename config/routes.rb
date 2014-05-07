@@ -1,4 +1,30 @@
 Composer1::Application.routes.draw do
+  resources :produtos
+
+  resources :item_pedidos
+
+  resources :pedidos
+
+  resources :clientes
+
+  resources :tiposuarios
+
+  resources :dependents
+
+  resources :sons
+
+  resources :fathers
+
+  resources :relacionamentos
+
+  resources :tests
+
+  resources :tipo_pags
+
+  resources :for_pags
+
+  resources :things
+
   root :to => "home#index"
   resources :users, :only => [:index, :show, :edit, :update ]
   get '/auth/:provider/callback' => 'sessions#create'
