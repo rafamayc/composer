@@ -4,9 +4,15 @@ class ClientesController < ApplicationController
   # GET /clientes
   # GET /clientes.json
   def index
-    @clientes = Cliente.all
+    #@clientes = Cliente.all
+    @clientes = Cliente.search(params[:search])
   end
-
+# def list
+ # @page_title = 'Lista de clientes'
+ # sort_by = params[:sort_by]
+  #@clientes = Cliente.all.order(sort_by)
+#  @cliente_pages, @clientes = paginate (:clientes, :order_by => 'name') 
+# end 
   # GET /clientes/1
   # GET /clientes/1.json
   def show

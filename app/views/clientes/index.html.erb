@@ -1,23 +1,18 @@
-<h1>Listing clientes</h1>
-
+<h1><font color = "green">Lista de clientes</font></h1>
+<%= form_tag clientes_path, :method => 'get' do %>
+  <p>
+   <b>Digite o Nome</b> <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Busca", :name => nil %>  <font color="red">Para exibir todos os registros deixe o campo vazio</font>
+  </p>
+<% end %>
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nome</th>
+      <th>&nbsp;</th>
+      <th>Credito</th>
+      <th>&nbsp;</th>
       <th>Ativo</th>
-      <th>Logradouro</th>
-      <th>Numero</th>
-      <th>Complemento</th>
-      <th>Bairro</th>
-      <th>Estado</th>
-      <th>Cidade</th>
-      <th>Cep</th>
-      <th>Cnpj cpf</th>
-      <th>Tipocad</th>
-      <th>Contato</th>
-      <th>Telefone</th>
-      <th>Email</th>
-      <th>Limite</th>
       <th></th>
       <th></th>
       <th></th>
@@ -27,24 +22,14 @@
   <tbody>
     <% @clientes.each do |cliente| %>
       <tr>
-        <td><%= cliente.name %></td>
-        <td><%= cliente.ativo %></td>
-        <td><%= cliente.logradouro %></td>
-        <td><%= cliente.numero %></td>
-        <td><%= cliente.complemento %></td>
-        <td><%= cliente.bairro %></td>
-        <td><%= cliente.estado %></td>
-        <td><%= cliente.cidade %></td>
-        <td><%= cliente.cep %></td>
-        <td><%= cliente.cnpj_cpf %></td>
-        <td><%= cliente.tipocad %></td>
-        <td><%= cliente.contato %></td>
-        <td><%= cliente.telefone %></td>
-        <td><%= cliente.email %></td>
+        <td><%=h cliente.name %></td>
+        <td>&nbsp;</td>
         <td><%= cliente.limite %></td>
-        <td><%= link_to 'Show', cliente %></td>
-        <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
-        <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>&nbsp;</td>
+        <td><%= cliente.ativo %></td>
+        <td><%= link_to 'Exibir', cliente %>&nbsp&nbsp</td>
+        <td><%= link_to 'Editar', edit_cliente_path(cliente) %>&nbsp&nbsp</td>
+        <td><%= link_to 'Apagar', cliente, method: :delete, data: { confirm: 'Deseja realmente apagar o cliente?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -52,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New Cliente', new_cliente_path %>
+<%= link_to 'Novo Cliente', new_cliente_path %>
