@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Composer1
 =========
 
@@ -139,3 +140,7 @@ License
 --
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+=======
+composer
+========
+>>>>>>> 3b6bed4b8246e902fce8f24b12bf0451bdca7f68

@@ -13,3 +13,89 @@
  *= require_tree .
  *= require_self
  */
+@charset "utf-8";
+
+html { height: 100% }
+body {
+    background-color:#ffffff;
+}
+
+#nav {
+    width: 1450px;
+    margin: 50px;
+    overflow: hidden;
+    margin-left: 50px;
+ }
+#nav ul {
+    float: left;
+    height: 55px;
+    width: 1400px;
+    opacity: 0.95;
+    border-radius: 5px;
+    list-style-type: none;
+    box-shadow: 0 250px 150px rgba(0,0,0,.2);
+    margin: 0;
+    padding: 0;
+}
+#nav ul li {
+    float: left;
+    height: 55px;
+    text-align:center;
+}
+#nav ul li a {
+    font: bold 21px/52px "Lato","Trebuchet MS", Arial, Helvetica, sans-serif;
+    display: block;
+    height: 55px;
+    border-bottom: 5px solid #143157;
+    background-color: #0f6fb2;
+    color: #fff;
+	text-decoration: none;
+	box-sizing: border-box;
+	transition: all .1s ease-in;
+	-o-transition: all .1s ease-in;
+	-moz-transition: all .1s ease-in;
+	-webkit-transition: all .1s ease-in;
+	background-image: linear-gradient(top, rgb(15, 111, 178), rgb(34, 65, 112));
+}
+#nav ul li a { width: 160px }
+#nav ul li:first-child a {
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#nav ul li:last-child a {
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#nav ul li a:hover {
+    box-shadow: inset 0 1px 0 #0070a3,inset 0 0 30px 0 #142a4a;
+    text-shadow: 0 1px 3px #143157;
+    border-bottom: 5px solid #0e223d;
+}
+#nav ul li a:active,
+#nav ul li a.active {
+    border-bottom: 1px solid #0e223d;
+    height: 55px;
+    padding-top: 2px;
+    box-shadow: inset 0 1px 0 #0070a3,inset 0 0 40px 0 #0d1b30;
+}
+#nav ul li a span {
+    border-left: 1px solid #143157;
+    border-right: 1px solid #1563a3;
+    height: 100%;
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+        
+}
+#nav ul li:first-child a span { border-left: none }
+#nav ul li:last-child a span { border-right: none }
+
