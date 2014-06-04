@@ -1,7 +1,7 @@
 <%= simple_form_for(@cliente) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+
     <%= f.input :name %>
     <%= f.input :ativo %>
     <%= f.input :logradouro %>
@@ -17,9 +17,10 @@
     <%= f.input :telefone %>
     <%= f.input :email %>
     <%= f.input :limite %>
-  </div>
+
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+

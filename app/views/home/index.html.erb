@@ -1,1 +1,31 @@
-<h3>Principal</h3>
+<link href="/assets/style.css" media="screen" rel="stylesheet" />
+<% if user_signed_in? %>
+<div id="login-form">
+<h3>Login Efetuado com sucesso</h3>
+</div>
+<% else %>
+ <div id="login-form">
+
+        
+
+
+
+           
+                <button><%= link_to 'Entrar com o Facebook', signin_path %></button>
+
+          
+            
+
+
+    </div> 
+    
+ </div>
+  
+</div>
+
+<footer>
+  <div class="copyright" align="center">
+    <p><b>2014 - Todos os direitos reservados</b></p>
+  </div>
+</footer>
+<% end %>

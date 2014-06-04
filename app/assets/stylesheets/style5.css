@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+body {
+  margin: 20px;
+}
+#search-form {
+  float: right;
+}
+#search-form p {
+  position: relative;
+}
+#search-form label {
+  display: none;
+}
+#search-form input {
+  -khtml-transition: width .5s, height .3s;
+  -moz-transition: width .5s, height .3s;
+  -o-transition: width .5s, height .3s;
+  -webkit-transition: width .5s, height .3s;
+  transition: width .5s, height .3s;
+}
+
+#search-form input {
+  border-radius: 3px 0px 0px 3px;
+  border: #e2e2e2 1px solid;
+  padding: 5px 10px;
+  width: 165px;
+  height: 20px;
+  margin-right: -5px
+}
+#search-form input:focus {
+  width: 320px;
+}
+#search-form input+button {
+  width: 40px;
+}
+
+#search-form input+button:before {
+  content: '';
+  background: #e2e2e2 url(http://cdn0.iconfinder.com/assets/img/icon_search.png) no-repeat 50% 50%;
+  width: 40px;
+  height: 32px;
+  display: block;
+  position: absolute;
+  border-radius: 0 3px 3px 0;
+  top: 0;
+  right: 0;
+}

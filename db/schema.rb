@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 20140507005336) do
     t.datetime "updated_at"
   end
 
+  create_table "comentarios", force: true do |t|
+    t.string   "autor"
+    t.text     "conteudo"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comentarios", ["post_id"], name: "index_comentarios_on_post_id", using: :btree
+
   create_table "dependents", force: true do |t|
     t.string   "name"
     t.string   "old"
@@ -87,6 +97,13 @@ ActiveRecord::Schema.define(version: 20140507005336) do
   add_index "pedidos", ["cliente_id"], name: "index_pedidos_on_cliente_id", using: :btree
   add_index "pedidos", ["for_pags_id"], name: "index_pedidos_on_for_pags_id", using: :btree
   add_index "pedidos", ["tipo_pag_id"], name: "index_pedidos_on_tipo_pag_id", using: :btree
+
+  create_table "posts", force: true do |t|
+    t.string   "titulo"
+    t.text     "conteudo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "produtos", force: true do |t|
     t.string   "name"

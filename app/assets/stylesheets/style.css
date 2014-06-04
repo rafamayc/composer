@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+* {
+margin: 0;
+padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	background: #ffffff;
+	font-size: 16px;
+	color: #393838;
+}
+  
+#wrap {
+  margin: 0 auto 30px;
+  
+}
+
+#regbar {
+  height: 67px;
+  background: #393838;
+}
+
+#navthing {
+margin-left: 50px;
+}
+
+h2 {
+	padding: 20px;
+	color: #FFFFFF;
+}
+
+
+h3 { margin: 0; }
+
+a {
+  color: #fff;
+	text-decoration: none;
+  font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+ 
+}
+
+a:hover {
+	color: #fff;
+}
+
+fieldset {
+	border: none;
+	margin: 0;
+}
+
+input {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	margin: 0;
+	-webkit-appearance: none;
+}
+li {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	margin: 0;
+	-webkit-appearance: none;
+}
+
+input:focus {
+  outline: none;
+}
+li:focus {
+  outline: none;
+}
+
+input[type="submit"] { cursor: pointer; }
+
+
+#login-form {
+	margin: 50px auto;
+	width: 302px;
+}
+
+#login-form h3 {
+	background-color: #393838;
+	color: #fff;
+	font-size: 16px;
+	padding: 20px;
+	text-align: center;
+	text-transform: none;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+  
+#login-form fieldset {
+	padding: 20px;
+	position: relative;
+	background-color: #ebebeb;
+	border: 1px solid #cbc9c9;
+}
+
+#login-form input {
+	font-size: 16px;
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#login-form input[type="email"],
+#login-form input[type="password"] {
+	border: 1px solid #cbc9c9;
+	padding: 12px 10px;
+	width: 238px;
+}
+
+#login-form input[type="submit"] {
+	color: #fff;
+	float: none;
+	font-weight: normal;
+	margin-top: 20px;
+	background-color: #393838;
+	padding-top: 12px;
+	padding-right: 20px;
+	padding-bottom: 12px;
+	padding-left: 20px;
+	width: 100%;
+}
+#login-form button {
+	color: #fff;
+	float: none;
+	font-weight: normal;
+	margin-top: 20px;
+	background-color: #393838;
+	padding-top: 12px;
+	padding-right: 20px;
+	padding-bottom: 12px;
+	padding-left: 20px;
+	width: 100%;
+}
+
+#login-form input[type="submit"]:hover {
+	background-color: #1563a3;
+}
+#login-form button:hover {
+	background-color: #1563a3;
+}
+#login-form footer {
+	font-size: 12px;
+	margin-top: 16px;
+}
+
+.info {
+	background: #e5e5e5;
+	border-radius: 50%;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	margin: 0 10px 0 0;
+	text-align: center;
+	width: 20px;
+}

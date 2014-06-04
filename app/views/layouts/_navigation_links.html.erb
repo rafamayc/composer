@@ -1,10 +1,6 @@
-<%# add navigation links to this file %>
-      <li>
-        <%= link_to root_path do %>
-          <span>Home</span>
-        <% end %>        
-      </li>
+<%# add navigation links to this file %>       
 <% if user_signed_in? %>
+  <link href="/assets/style2.css" media="screen" rel="stylesheet" />
   <li>
   <%= link_to clientes_path do %>
       <span>Clientes</span>
@@ -28,8 +24,11 @@
 
 <% end %>
 <% if user_signed_in? %>
-
-  <li><%= link_to 'Sair', signout_path %></li>
+  <li><%= link_to signout_path do %>
+      <span>Sair</span>
+      <% end %>
 <% else %>
-  <li><%= link_to 'Entrar', signin_path %></li>
+          <div id="wrap">
+          <div id="regbar">
+          <h2>Login Easy Sale</h2></div></div>
 <% end %>
