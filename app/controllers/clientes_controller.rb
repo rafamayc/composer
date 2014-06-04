@@ -31,6 +31,7 @@ class ClientesController < ApplicationController
   # POST /clientes.json
   def create
     @cliente = Cliente.new(cliente_params)
+    @cliente = Cliente.list(cliente_params)
 
     respond_to do |format|
       if @cliente.save
