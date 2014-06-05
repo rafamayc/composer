@@ -1,5 +1,5 @@
 <link href="/assets/style3.css" media="screen" rel="stylesheet" />
-
+<link href="/assets/style1.css" media="screen" rel="stylesheet" />
 <h1>Clientes</h1>
 
 <div align="center">
@@ -8,8 +8,8 @@
 
 <%= form_tag clientes_path, :method => 'get' do %>
   <p>
-   <b>Digite o Nome</b> <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Busca",class:"button save", :name => nil %>  <font color="red">Para exibir todos os registros deixe o campo vazio</font>
+   <%= text_field_tag :search, params[:search], :placeholder => "Digite o Nome" %>
+    <%= submit_tag "Busca",class:"button save", :name => nil %> <br/> <font color="red">Para exibir todos os registros deixe o campo vazio</font>
   </p>
 <% end %>
 <table>
@@ -34,9 +34,10 @@
         <td><%= cliente.limite %></td>
         <td>&nbsp;</td>
         <td><%= cliente.ativo %></td>
-        <td><%= link_to 'Exibir', cliente,class:"button show" %>&nbsp&nbsp</td>
-        <td><%= link_to 'Editar', edit_cliente_path(cliente),class:"button edit" %>&nbsp&nbsp</td>
-        <td><%= link_to 'Apagar', cliente,class:"button delete", method: :delete, data: { confirm: 'Deseja realmente apagar o cliente?' } %></td>
+        
+        <td><%= link_to 'Exibir', cliente,class:"button show" %></td>
+        <td><%= link_to 'Editar', edit_cliente_path(cliente),class:"button edit" %></td>
+        <td><%= link_to 'Apagar', cliente,class:"button delete" , method: :delete, data: { confirm: 'Deseja realmente apagar o cliente?'} %></td>
       </tr>
     <% end %>
   </tbody>

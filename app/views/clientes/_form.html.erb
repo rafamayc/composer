@@ -1,26 +1,37 @@
 <%= simple_form_for(@cliente) do |f| %>
   <%= f.error_notification %>
+  <div class="accounttype">
+   <%= f.radio_button :tipocad, 'fisica', :checked => true %> 
+  <%= label :tipocad_fisica, 'Pessoa Fisica' %>
+  <%= f.radio_button :tipocad, 'juridica' %>
+  <%= label :tipocad_juridica, 'Pessoa Juridica' %>
+    </div> 
 
+    <%= f.text_field :name, :placeholder => "Razao Social" %>
+    <%= f.text_field :nomefantasia, :placeholder => "Nome Fantasia" %>
+    <%= f.text_field :logradouro, :placeholder => "Endereco" %>
+    <%= f.text_field :numero, :placeholder => "Numero" %>
+    <%= f.text_field :complemento, :placeholder => "Complemento" %>
+    <%= f.text_field :bairro, :placeholder => "Bairro" %>
+    <%= f.text_field :estado, :placeholder => "Estado" %>
+    <%= f.text_field :cidade, :placeholder => "Cidade" %>
+    <%= f.text_field :cep, :placeholder => "CEP" %>
+    <%= f.text_field :cnpj_cpf, :placeholder => "CNPJ-CPF" %>
+    <%= f.text_field :contato, :placeholder => "Contato" %>
+    <%= f.text_field :telefone, :placeholder => "Telefone" %>
+    <%= f.text_field :email, :placeholder => "Email" %>
+    <%= f.text_field :limite, :placeholder => "Limite de Compra" %>
+<div class="gender">
 
-    <%= f.input :name %>
-    <%= f.input :ativo %>
-    <%= f.input :logradouro %>
-    <%= f.input :numero %>
-    <%= f.input :complemento %>
-    <%= f.input :bairro %>
-    <%= f.input :estado %>
-    <%= f.input :cidade %>
-    <%= f.input :cep %>
-    <%= f.input :cnpj_cpf %>
-    <%= f.input :tipocad %>
-    <%= f.input :contato %>
-    <%= f.input :telefone %>
-    <%= f.input :email %>
-    <%= f.input :limite %>
-
-
+  <%= f.radio_button :ativo, 'ativo', :checked => true %> 
+  <%= label :ativo_ativo, 'Ativo' %>
+  <%= f.radio_button :ativo, 'inativo' %>
+  <%= label :ativo_inativo, 'Inativo' %>
+  </div>
   <div class="form-actions">
-    <%= f.button :submit %>
+  
+			<%= f.button :submit, class:"button Update",:value => "Registra Cliente" %>
+    <%= link_to 'Voltar', clientes_path, class:"button down" %>
   </div>
 <% end %>
 

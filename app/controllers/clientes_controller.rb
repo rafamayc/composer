@@ -5,6 +5,7 @@ class ClientesController < ApplicationController
   # GET /clientes.json
   def index
     #@clientes = Cliente.all
+    
     @clientes = Cliente.search(params[:search])
   end
 # def list
@@ -16,12 +17,14 @@ class ClientesController < ApplicationController
   # GET /clientes/1
   # GET /clientes/1.json
   def show
+  @cliente = Cliente.find(params[:id])
   end
 
   # GET /clientes/new
   def new
     @cliente = Cliente.new
   end
+  
 
   # GET /clientes/1/edit
   def edit
@@ -31,7 +34,6 @@ class ClientesController < ApplicationController
   # POST /clientes.json
   def create
     @cliente = Cliente.new(cliente_params)
-    @cliente = Cliente.list(cliente_params)
 
     respond_to do |format|
       if @cliente.save
@@ -76,6 +78,6 @@ class ClientesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cliente_params
-      params.require(:cliente).permit(:name, :ativo, :logradouro, :numero, :complemento, :bairro, :estado, :cidade, :cep, :cnpj_cpf, :tipocad, :contato, :telefone, :email, :limite)
+      params.require(:cliente).permit(:name, :ativo, :logradouro, :numero, :complemento, :bairro, :estado, :cidade, :cep, :cnpj_cpf, :tipocad, :contato, :telefone, :email, :limite, :nomefantasia)
     end
 end
