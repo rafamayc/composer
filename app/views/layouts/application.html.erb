@@ -5,6 +5,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Composer1" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Composer1" %>">
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/> 
   
     <%= csrf_meta_tags %>

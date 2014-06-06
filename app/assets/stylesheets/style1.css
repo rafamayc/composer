@@ -19,6 +19,7 @@ select {
 	font-size: 16px;
 	color: #666666;
 }
+.texto{text-transform:capitalize;}
 
 h1 {
 	font-size: 32px;

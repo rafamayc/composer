@@ -13,34 +13,38 @@
   </p>
 <% end %>
 <table>
-  <thead>
+
     <tr>
       <th>Nome</th>
       <th>&nbsp;</th>
-      <th>Credito</th>
+      <th>Email</th>
       <th>&nbsp;</th>
-      <th>Ativo</th>
+      <th>Telefone</th>
+      <th>&nbsp;</th>
+      <th>Contato</th>      
       <th></th>
       <th></th>
       <th></th>
     </tr>
-  </thead>
 
-  <tbody>
+
+
     <% @clientes.each do |cliente| %>
       <tr>
         <td><%=h cliente.name %></td>
         <td>&nbsp;</td>
-        <td><%= cliente.limite %></td>
+        <td><%= cliente.email %></td>
         <td>&nbsp;</td>
-        <td><%= cliente.ativo %></td>
+        <td><%= cliente.telefone %></td>
+        <td>&nbsp;</td>
+        <td><%= cliente.contato %></td>        
         
         <td><%= link_to 'Exibir', cliente,class:"button show" %></td>
         <td><%= link_to 'Editar', edit_cliente_path(cliente),class:"button edit" %></td>
         <td><%= link_to 'Apagar', cliente,class:"button delete" , method: :delete, data: { confirm: 'Deseja realmente apagar o cliente?'} %></td>
       </tr>
     <% end %>
-  </tbody>
+
 </table>
 
 <br>

@@ -1,5 +1,6 @@
-<%= simple_form_for(@cliente) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for(@cliente) do |f| %> 
+        <%= f.error_notification %>
+        <%= f.error :telefone, :id => "telefone_error" %>
   <div class="accounttype">
    <%= f.radio_button :tipocad, 'fisica', :checked => true %> 
   <%= label :tipocad_fisica, 'Pessoa Fisica' %>
@@ -7,8 +8,8 @@
   <%= label :tipocad_juridica, 'Pessoa Juridica' %>
     </div> 
 
-    <%= f.text_field :name, :placeholder => "Razao Social" %>
-    <%= f.text_field :nomefantasia, :placeholder => "Nome Fantasia" %>
+    <%= f.text_field :name, :placeholder => "Razao Social - Nome Completo(Obrigatorio)", :class => "texto" %>
+    <%= f.text_field :nomefantasia, :placeholder => "Nome Fantasia - Apelido" %>
     <%= f.text_field :logradouro, :placeholder => "Endereco" %>
     <%= f.text_field :numero, :placeholder => "Numero" %>
     <%= f.text_field :complemento, :placeholder => "Complemento" %>
@@ -17,9 +18,9 @@
     <%= f.text_field :cidade, :placeholder => "Cidade" %>
     <%= f.text_field :cep, :placeholder => "CEP" %>
     <%= f.text_field :cnpj_cpf, :placeholder => "CNPJ-CPF" %>
-    <%= f.text_field :contato, :placeholder => "Contato" %>
-    <%= f.text_field :telefone, :placeholder => "Telefone" %>
-    <%= f.text_field :email, :placeholder => "Email" %>
+    <%= f.text_field :contato, :placeholder => "Contato(Obrigatorio)" %>
+    <%= f.text_field :telefone, :placeholder => "Telefone(Obrigatorio)" %>
+    <%= f.text_field :email, :placeholder => "Email(Obrigatorio)" %>
     <%= f.text_field :limite, :placeholder => "Limite de Compra" %>
 <div class="gender">
 
@@ -31,6 +32,7 @@
   <div class="form-actions">
   
 			<%= f.button :submit, class:"button Update",:value => "Registra Cliente" %>
+
     <%= link_to 'Voltar', clientes_path, class:"button down" %>
   </div>
 <% end %>
