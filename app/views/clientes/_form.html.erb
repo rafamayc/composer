@@ -1,6 +1,6 @@
 <%= simple_form_for(@cliente) do |f| %> 
         <%= f.error_notification %>
-        <%= f.error :telefone, :id => "telefone_error" %>
+        
   <div class="accounttype">
    <%= f.radio_button :tipocad, 'fisica', :checked => true %> 
   <%= label :tipocad_fisica, 'Pessoa Fisica' %>
@@ -9,6 +9,7 @@
     </div> 
 
     <%= f.text_field :name, :placeholder => "Razao Social - Nome Completo(Obrigatorio)", :class => "texto" %>
+    <font color="red"><%= f.error :name, :id => "name_error" %></font>
     <%= f.text_field :nomefantasia, :placeholder => "Nome Fantasia - Apelido" %>
     <%= f.text_field :logradouro, :placeholder => "Endereco" %>
     <%= f.text_field :numero, :placeholder => "Numero" %>
@@ -19,8 +20,11 @@
     <%= f.text_field :cep, :placeholder => "CEP" %>
     <%= f.text_field :cnpj_cpf, :placeholder => "CNPJ-CPF" %>
     <%= f.text_field :contato, :placeholder => "Contato(Obrigatorio)" %>
+    <font color="red"><%= f.error :contato, :id => "contato_error" %></font>
     <%= f.text_field :telefone, :placeholder => "Telefone(Obrigatorio)" %>
-    <%= f.text_field :email, :placeholder => "Email(Obrigatorio)" %>
+    <font color="red"><%= f.error :telefone, :id => "telefone_error" %></font>
+    <%= f.text_field :email, :placeholder => "Email" %>
+    <font color="red"><%= f.error :email, :id => "email_error" %></font>
     <%= f.text_field :limite, :placeholder => "Limite de Compra" %>
 <div class="gender">
 
@@ -31,7 +35,7 @@
   </div>
   <div class="form-actions">
   
-			<%= f.button :submit, class:"button Update",:value => "Registra Cliente" %>
+			<%= f.button :submit, class:"button save",:value => "Salvar" %>
 
     <%= link_to 'Voltar', clientes_path, class:"button down" %>
   </div>

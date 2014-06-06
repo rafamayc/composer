@@ -49,15 +49,18 @@ class ClientesController < ApplicationController
   # PATCH/PUT /clientes/1
   # PATCH/PUT /clientes/1.json
   def update
-    respond_to do |format|
-      if @cliente.update(cliente_params)
-        format.html { redirect_to @cliente, notice: 'Cliente was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @cliente.errors, status: :unprocessable_entity }
-      end
-    end
+    #respond_to do |format|
+      #if @cliente.update(cliente_params)
+        #format.html { redirect_to @cliente, notice: 'Cliente was successfully updated.' }
+       #@cliente, notice: "Thanks for your comment!"
+        #format.json { head :no_content }
+      #else
+        #format.html { render action: 'edit' }
+        #format.json { render json: @cliente.errors, status: :unprocessable_entity }
+      #end
+    #end
+     flash[:notice] = "Cliente atualizado com Sucesso"
+     redirect_to @cliente
   end
 
   # DELETE /clientes/1

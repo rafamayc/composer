@@ -19,6 +19,19 @@ select {
 	font-size: 16px;
 	color: #666666;
 }
+textarea{	width: 84%;
+	height: 80px;
+	-webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
+	-moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px;
+	border-radius: 4px 4px 4px 4px/5px 5px 4px 4px;
+	background-color: #fff;
+	-webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+	-moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+	box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+	border: solid 1px #cbc9c9;
+	margin-left: -5px;
+	margin-top: 13px;
+	padding-left: 10px;}
 .texto{text-transform:capitalize;}
 
 h1 {
@@ -35,8 +48,7 @@ html{
 }
 
 .testboxcliente{
-	width: 600px;
-	height: 1300px;
+	width: 44%;
 	-webkit-border-radius: 8px/7px;
 	-moz-border-radius: 8px/7px;
 	border-radius: 8px/7px;
@@ -49,6 +61,23 @@ html{
 	margin-right: auto;
 	margin-bottom: 20px;
 	margin-left: auto;
+}
+.testboxcliente p{ padding-left:10px; padding-top:10px;}
+.testbox{
+	width: 80%;
+	-webkit-border-radius: 8px/7px;
+	-moz-border-radius: 8px/7px;
+	border-radius: 8px/7px;
+	background-color: #ebebeb;
+	-webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+	-moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+	box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+	border: solid 1px #cbc9c9;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-bottom: 20px;
+	margin-left: auto;
+  padding-left: 10px;
 }
 
 .testboxprodutos {
@@ -123,8 +152,8 @@ hr{
   opacity: 0.3;
 }
 
-input[type=text],input[type=password]{
-	width: 500px;
+input[type=text],input[type=password],input[type=number]{
+	width: 84%;
 	height: 39px;
 	-webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
 	-moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px;

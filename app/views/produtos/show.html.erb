@@ -1,3 +1,6 @@
+<link href="/assets/style1.css" media="screen" rel="stylesheet" />
+<link href="/assets/style3.css" media="screen" rel="stylesheet" />
+<div class="testboxcliente">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -30,5 +33,6 @@
   <%= @produto.ativo %>
 </p>
 
-<%= link_to 'Edit', edit_produto_path(@produto) %> |
-<%= link_to 'Back', produtos_path %>
+<%= link_to 'Editar', edit_produto_path(@produto),class:"button edit" %> |
+<%= link_to 'Voltar', produtos_path , class:"button left_arrow"%>
+</div>

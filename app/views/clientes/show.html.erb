@@ -1,20 +1,26 @@
-<p id="notice"><%= notice %></p>
+<link href="/assets/style1.css" media="screen" rel="stylesheet" />
+<link href="/assets/style3.css" media="screen" rel="stylesheet" />
+<div class="testboxcliente">
+ <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 
-<div><p>
-  <strong>Name:</strong>
-  <%= @cliente.name %>
-  <strong>Ativo:</strong>
+
+ </p><p> <strong>Situacao Cadastral:</strong>
   <%= @cliente.ativo %>
 </p>
-
 <p>
-  <strong>Logradouro:</strong>
-  <%= @cliente.logradouro %>
-</p>
+  <strong>Nome:</strong>
+  <%= @cliente.name %>
 <p>
-  <strong>Fanta:</strong>
+  <strong>Nome Fantasia - Apelido:</strong>
   <%= @cliente.nomefantasia %>
 </p>
+<p>
+  <strong>Endereco:</strong>
+  <%= @cliente.logradouro %>
+</p>
+
 <p>
   <strong>Numero:</strong>
   <%= @cliente.numero %>
@@ -46,12 +52,12 @@
 </p>
 
 <p>
-  <strong>Cnpj cpf:</strong>
+  <strong>Cnpj - CPF:</strong>
   <%= @cliente.cnpj_cpf %>
 </p>
 
 <p>
-  <strong>Tipocad:</strong>
+  <strong>Tipo Cadastro:</strong>
   <%= @cliente.tipocad %>
 </p>
 
@@ -75,5 +81,6 @@
   <%= @cliente.limite %>
 </p>
 
-<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
-<%= link_to 'Back', clientes_path %>
+<%= link_to 'Editar', edit_cliente_path(@cliente),class:"button edit" %> |
+<%= link_to 'Voltar', clientes_path,class:"button left_arrow" %>
+</div>

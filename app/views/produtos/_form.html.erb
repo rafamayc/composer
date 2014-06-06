@@ -1,16 +1,22 @@
 <%= simple_form_for(@produto) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :valor %>
-    <%= f.input :descricao %>
-    <%= f.input :unidade %>
-    <%= f.input :saldo %>
-    <%= f.input :ativo %>
+
+    <%= f.text_field :name, :placeholder => "Nome do Produto(Obrigatorio)", :class => "texto" %>
+    <%= f.number_field :valor,step: 0.5,:placeholder => "Valor de Venda(Obrigatorio)", :class => "texto"  %>
+    <%= text_area_tag :descricao,"Descricao do produto" %>
+    <%= f.text_field :unidade,:placeholder => "Unidade" %>
+    <%= f.text_field :saldo, :placeholder => "Saldo estoque" %>
+ <div class="gender">
+
+  <%= f.radio_button :ativo, 'ativo', :checked => true %> 
+  <%= label :ativo_ativo, 'Ativo' %>
+  <%= f.radio_button :ativo, 'inativo' %>
+  <%= label :ativo_inativo, 'Inativo' %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit,class:"button save",:value => "Salvar" %>
+    <%= link_to 'Voltar', produtos_path, class:"button down" %>
   </div>
 <% end %>

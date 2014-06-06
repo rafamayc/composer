@@ -1,14 +1,28 @@
-<h1>Listing produtos</h1>
+<link href="/assets/style3.css" media="screen" rel="stylesheet" />
+<link href="/assets/style1.css" media="screen" rel="stylesheet" />
+<h1>Produtos</h1>
+
+<div class="testbox">
+
+<%= link_to 'Novo Produto', new_produto_path , class: "button add"  %><br/>
+
+<%= form_tag produtos_path, :method => 'get' do %>
+  <p>
+   <%= text_field_tag :search, params[:search], :placeholder => "Digite o Nome" %>
+    <%= submit_tag "Busca",class:"button save", :name => nil %> <br/> <font color="red">Para exibir todos os registros deixe o campo vazio</font>
+  </p>
+<% end %>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nome</th>
+      <th>&nbsp;</th>
       <th>Valor</th>
-      <th>Descricao</th>
-      <th>Unidade</th>
+      <th>&nbsp;</th>
       <th>Saldo</th>
-      <th>Ativo</th>
+      <th>&nbsp;</th>
+      <th>Situacao</th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,14 +33,15 @@
     <% @produtos.each do |produto| %>
       <tr>
         <td><%= produto.name %></td>
+        <td>&nbsp;</td>
         <td><%= produto.valor %></td>
-        <td><%= produto.descricao %></td>
-        <td><%= produto.unidade %></td>
+        <td>&nbsp;</td>
         <td><%= produto.saldo %></td>
+        <td>&nbsp;</td>
         <td><%= produto.ativo %></td>
-        <td><%= link_to 'Show', produto %></td>
-        <td><%= link_to 'Edit', edit_produto_path(produto) %></td>
-        <td><%= link_to 'Destroy', produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Exibir', produto,class:"button show" %></td>
+        <td><%= link_to 'Editar', edit_produto_path(produto),class:"button edit" %></td>
+        <td><%= link_to 'Deletar', produto,class:"button delete", method: :delete, data: { confirm: 'Tem certeza de deseja excluir?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +49,4 @@
 
 <br>
 
-<%= link_to 'New Produto', new_produto_path %>
+
