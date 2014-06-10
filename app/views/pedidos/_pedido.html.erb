@@ -1,12 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Dataaprovacao:</strong>
-  <%= @pedido.dataaprovacao %>
+  <strong>Numero do Pedido:</strong>
+  <%= @pedido.id %>
 </p>
-
 <p>
-  <strong>Datapedido:</strong>
+  <strong>Data do pedido:</strong>
   <%= @pedido.datapedido %>
 </p>
 
@@ -15,17 +14,5 @@
   <%= @pedido.cliente.name %>
 </p>
 
-
-
-
-<p>
-  <strong>Valortotal:</strong>
-  <%= @pedido.valortotal %>
-</p>
-
-<p>
-  <strong>Statuspedido:</strong>
-  <%= @pedido.statuspedido %>
-</p>
 
 

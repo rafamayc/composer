@@ -1,12 +1,9 @@
-<%= simple_form_for(item) do |f| %>
-  <%= f.error_notification %>
-<div class="nested-fields">
-  <%= f.association :pedido%>
-  <%= f.association :produto%>
-  <%= f.input :quantity %>
-  <%= f.input :price %>
-    		<td><%= f.submit 'Gravar', :class => 'btn btn-primary'%></td>
-</div>
-
- 
+<%= simple_form_for [@pedido, @pedido.items.build], remote: true, :html => { :class => 'form-horizontal' } do |f| %>
+	<tr>
+				<td><%= f.collection_select(:produto_id, Produto.all, :id, :name,  { :prompt => true }) %></td>
+		<td><%= f.text_field :quantity, placeholder: 'Quantidade'%></td>
+		<td><%= f.text_field :price, placeholder: 'Preco'%></td>
+    <td><%= f.submit 'Gravar', :class => 'btn btn-primary'%></td>
+		<td></td>
+	</tr>
 <% end %>

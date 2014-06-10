@@ -1,8 +1,26 @@
-<br/><br/>
-
+<link href="/assets/style1.css" media="screen" rel="stylesheet" />
+<link href="/assets/style3.css" media="screen" rel="stylesheet" />
+<div class="testboxcliente">
 <%= render :partial => @pedido %>
-<%= render :partial=>"item_list", :locals=>{:items =>@pedido.items} %>
-<%= render :partial=>"item_form", :locals=>{:item =>Item.new(:pedido_id=>@pedido.id)}%>
+</div>
+<br/>
+<br/>
+<div class="testboxcliente">
+<table class="table table-striped">
+  <thead>
+		<caption>Itens</caption>
+		<tr>
+			<th>Produto</th><th>Quantidade</th><th>Preco</th><th>Total</th><th></th>
+		</tr>
+  </thead>
+	<tbody id='item_listing'>
+		<%= render :partial => 'item_list' %>
+	</tbody>
+	<tbody id='item_form'>
+		<%= render :partial => 'item_form' %>
+	</tbody>
+</table>
 
 <%= link_to 'Edit', edit_pedido_path(@pedido) %> |
 <%= link_to 'Back', pedidos_path %>
+</div>

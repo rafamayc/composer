@@ -4,7 +4,7 @@ class Pedido < ActiveRecord::Base
   belongs_to :tipo_pag
   belongs_to :for_pags
   has_many :items
-  accepts_nested_attributes_for :items
+  #accepts_nested_attributes_for :items
   
   def totalquantity
     iTotal = 0
@@ -20,14 +20,6 @@ class Pedido < ActiveRecord::Base
       iTotal = iTotal + (i.price * i.quantity)
     end
     totalitem = iTotal
-  end
+  end 
   
-  def totaldiscount
-    iTotal = 0;
-    self.items.each do |i|
-      iTotal = iTotal + (i.price * i.quantity)
-    end
-    iTotal = (iTotal * (100 - self.discount)) / 100
-    totaldesconto = iTotal
-  end
 end
