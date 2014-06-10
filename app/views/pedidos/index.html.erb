@@ -1,15 +1,20 @@
-<h1>Listing pedidos</h1>
+<link href="/assets/style3.css" media="screen" rel="stylesheet" />
+<link href="/assets/style1.css" media="screen" rel="stylesheet" />
+<h1>Lista de Pedidos</h1>
 
+<div class="testbox">
+<%= link_to 'Novo Pedido', new_pedido_path , class: "button add"  %>
+<%= link_to 'Forma de Pagamento', new_tipo_pag_path , class: "button add"  %>
 <table>
   <thead>
     <tr>
-      <th>Dataaprovacao</th>
-      <th>Datapedido</th>
+      <th>Data do Pedido</th>
+      <th>&nbsp;</th>      
       <th>Cliente</th>
-      <th>Tipo pag</th>
-      <th>For pags</th>
-      <th>Valortotal</th>
-      <th>Statuspedido</th>
+      <th>&nbsp;</th>      
+      <th>Valor total</th>
+      <th>&nbsp;</th>      
+      <th>Status</th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,16 +24,17 @@
   <tbody>
     <% @pedidos.each do |pedido| %>
       <tr>
-        <td><%= pedido.dataaprovacao %></td>
-        <td><%= pedido.datapedido %></td>
+        <td><%= pedido.datapedido.strftime ("%d/%m/%Y") %></td>
+        <td>&nbsp;</td>        
         <td><%= pedido.cliente.name %></td>
-        <td><%= pedido.tipo_pag.description %></td>
-        <td><%= pedido.for_pags %></td>
+        <td>&nbsp;</td>        
         <td><%= pedido.valortotal %></td>
+        <td>&nbsp;</td>        
         <td><%= pedido.statuspedido %></td>
-        <td><%= link_to 'Show', pedido %></td>
-        <td><%= link_to 'Edit', edit_pedido_path(pedido) %></td>
-        <td><%= link_to 'Destroy', pedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>&nbsp;</td>        
+        <td><%= link_to 'Exibir', pedido,class:"button show" %></td>
+        <td><%= link_to 'Editar', edit_pedido_path(pedido),class:"button edit" %></td>
+        <td><%= link_to 'Deletar', pedido,class:"button delete", method: :delete, data: { confirm: 'Tem certeza de deseja excluir ?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Pedido', new_pedido_path %>
+<div/>

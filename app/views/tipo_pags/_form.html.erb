@@ -2,11 +2,18 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :description %>
-    <%= f.input :active %>
+
+    <%= f.text_field :description,:placeholder => "Nome" %>
+ <div class="gender">   
+ <%= f.radio_button :active, 'ativo', :checked => true %> 
+  <%= label :ativo_ativo, 'Ativo' %>
+  <%= f.radio_button :active, 'inativo' %>
+  <%= label :ativo_inativo, 'Inativo' %>
+  </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class:"button save",:value => "Salvar" %>
+    <%= link_to 'Voltar', pedidos_path,class:"button"  %>
   </div>
 <% end %>

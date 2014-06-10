@@ -1,35 +1,8 @@
-<p id="notice"><%= notice %></p>
+<br/><br/>
 
-<p>
-  <strong>Dataaprovacao:</strong>
-  <%= @pedido.dataaprovacao %>
-</p>
-
-<p>
-  <strong>Datapedido:</strong>
-  <%= @pedido.datapedido %>
-</p>
-
-<p>
-  <strong>Cliente:</strong>
-  <%= @pedido.cliente.name %>
-</p>
-
-<p>
-  <strong>Tipo pag:</strong>
-  <%= @pedido.tipo_pag.description %>
-</p>
-
-
-<p>
-  <strong>Valortotal:</strong>
-  <%= @pedido.valortotal %>
-</p>
-
-<p>
-  <strong>Statuspedido:</strong>
-  <%= @pedido.statuspedido %>
-</p>
+<%= render :partial => @pedido %>
+<%= render :partial=>"item_list", :locals=>{:items =>@pedido.items} %>
+<%= render :partial=>"item_form", :locals=>{:item =>Item.new(:pedido_id=>@pedido.id)}%>
 
 <%= link_to 'Edit', edit_pedido_path(@pedido) %> |
 <%= link_to 'Back', pedidos_path %>

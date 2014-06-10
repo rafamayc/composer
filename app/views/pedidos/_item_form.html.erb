@@ -1,0 +1,12 @@
+<%= simple_form_for(item) do |f| %>
+  <%= f.error_notification %>
+<div class="nested-fields">
+  <%= f.association :pedido%>
+  <%= f.association :produto%>
+  <%= f.input :quantity %>
+  <%= f.input :price %>
+    		<td><%= f.submit 'Gravar', :class => 'btn btn-primary'%></td>
+</div>
+
+ 
+<% end %>

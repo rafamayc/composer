@@ -1,9 +1,13 @@
 Composer1::Application.routes.draw do
+  resources :items
+
   resources :produtos
 
   resources :item_pedidos
 
-  resources :pedidos
+  resources :pedidos do
+   resources :items
+  end 
 
   resources :clientes
 

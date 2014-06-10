@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507005336) do
+ActiveRecord::Schema.define(version: 20140609220508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140507005336) do
     t.float    "limite"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nomefantasia", limit: 60
   end
 
   create_table "comentarios", force: true do |t|
@@ -78,9 +79,22 @@ ActiveRecord::Schema.define(version: 20140507005336) do
     t.decimal  "valor_total"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pedido_id"
   end
 
   add_index "item_pedidos", ["produto_id"], name: "index_item_pedidos_on_produto_id", using: :btree
+
+  create_table "items", force: true do |t|
+    t.integer  "pedido_id"
+    t.integer  "produto_id"
+    t.decimal  "quantity"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["pedido_id"], name: "index_items_on_pedido_id", using: :btree
+  add_index "items", ["produto_id"], name: "index_items_on_produto_id", using: :btree
 
   create_table "pedidos", force: true do |t|
     t.date     "dataaprovacao"

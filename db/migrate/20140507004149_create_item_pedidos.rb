@@ -3,6 +3,7 @@ class CreateItemPedidos < ActiveRecord::Migration
     create_table :item_pedidos do |t|
       t.decimal :quantidade
       t.references :produto, index: true
+      t.references :pedido, index: true
       t.decimal :valor_unitario
       t.decimal :valor_total
 
