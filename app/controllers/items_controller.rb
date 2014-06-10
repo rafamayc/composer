@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   before_filter :load_pedido
 
   def create
-    @item = @pedidos.items.build(params[:item])
+    @item = Item.new(item_params)
+#    @item = @pedidos.items.build(params[:item])
     @item.save
 
     respond_with @item
@@ -25,6 +26,11 @@ class ItemsController < ApplicationController
   
   def load_pedido
     @pedido = Pedido.find(params[:pedido_id])
+  end
+
+      # Never trust parameters from the scary internet, only allow the white list through.
+  def item_params
+    params.require(:item).permit(:produto_id, :pedido_id, :quantity, :price)
   end
 
 end
